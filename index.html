@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Sobat Bekantan | Konservasi Bekantan & Mangrove</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header>
+        <nav>
+            <div class="logo"><img src="" alt=""><span>Sobat Bekantan</span></div>
+
+            <!-- BURGER MENU BUTTON -->
+            <button class="burger-menu" id="burgerMenu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- NAV MENU (HIDDEN ON MOBILE) -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#lokasi">Lokasi</a></li>
+                <li><a href="#artikel">Artikel</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#edukasi">Edukasi</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== HERO / BERANDA ========== -->
+    <section class="hero" id="home">
+        <!-- ✨ Animasi partikel melayang (teks/emoji) -->
+        <div class="floating">🦥</div>
+        <div class="floating">🌳</div>
+        <div class="floating">🍌</div>
+        <div class="floating">AYS</div>
+        <div class="floating">INOVDA</div>
+        <div class="floating">BBF</div>
+        <div class="floating">KKMB</div>
+        <div class="floating">🌿</div>
+
+        <div class="hero-content">
+            <h1>Selamatkan Bekantan & Mangrove Kalimantan</h1>
+            <p>
+                Pusat edukasi, aksi, dan pembelajaran pelestarian bekantan serta ekosistem mangrove.
+                Mari bersama menjaga primata endemik dan habitatnya untuk masa depan!
+
+            </p>
+            <div class="hero-action">
+                <a href="#artikel">Jelajah Artikel</a>
+                <a href="#program" class="alt">Lihat Program</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/BBB.jpg" alt="Bekantan & Mangrove">
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- BEKANTAN ADALAH (BARU) -->
+    <!-- ========================= -->
+    <section id="bekantan-adalah" class="section">
+        <h2 class="section-title">Bekantan Adalah</h2>
+        <div class="about about-flex">
+            <div class="about-text">
+                <p>
+                    Bekantan (Nasalis larvatus) adalah primata endemik Kalimantan yang hidup di kawasan mangrove dan
+                    sepanjang muara sungai.
+                    Ciri khasnya adalah hidung panjang pada pejantan dewasa yang berfungsi memperkuat panggilan serta
+                    menjadi sinyal sosial.
+                    Mereka memainkan peran penting dalam ekosistem pesisir sebagai penyebar benih dan indikator
+                    kesehatan
+                    mangrove.
+                </p>
+            </div>
+
+            <!-- Placeholder gambar — ganti atribut src dengan gambar Anda -->
+            <div class="about-image">
+                <img id="bekantanPlaceholder" src="images/pexels-miguel-cuenca-67882473-24552037.jpg"
+                    alt="Placeholder Bekantan">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION TENTANG ========== -->
+    <section id="tentang" class="section">
+        <div class="about">
+            <h2>Tentang Bekantan Conservation</h2>
+            <p>AYS Indonesia yang berdedikasi pada konservasi bekantan & pelestarian ekosistem mangrove dalam upaya
+                menyelamatkan keanekaragaman hayati
+                Kalimantan. <br> Visi: konservasi berkelanjutan, riset ilmiah, aksi nyata, kolaborasi nasional dan
+                global.
+            </p>
+            <ul>
+                <li>🌱 Edukasi & Publikasi</li>
+                <li>🗺️ Data & Dokumentasi Lapangan</li>
+                <li>🤝 Kolaborasi Masyarakat & Peneliti</li>
+                <li>📊 Pelaporan Statistik Konsisten</li>
+            </ul>
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/Foto bersama.jpg" alt="Aktivitas Konservasi 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Keunikan Bekantan.jpg" alt="Aktivitas Konservasi 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/KonservasiTarakan.JPG" alt="Aktivitas Konservasi 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/SOBATBEKANTAN.jpg" alt="Aktivitas Konservasi 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CHART STATISTIK UTAMA ========== -->
+    <section class="section">
+        <div class="chart-box">
+            <canvas id="populasiChart" height="180"></canvas>
+            <h4>Distribusi Populasi Bekantan per Lokasi</h4>
+        </div>
+    </section>
+
+    <!-- ========== SECTION LOKASI (SLIDER) ========== -->
+    <section id="lokasi" class="section">
+        <h2 class="section-title">Lokasi & Situs Konservasi</h2>
+        <div class="loc-slider-wrapper">
+            <div class="loc-slider" id="lokasiSlider">
+                <div class="loc-slide">
+                    <div class="loc-card">
+                        <a class="loc-img-link"
+                            href="https://www.instagram.com/ays_indonesia?utm_source=ig_web_button_share_sheet&igsh=MTRyeDRoMTllaHFlbQ=="
+                            target="_blank">
+                            <img src="images/KonservasiTarakan.JPG" alt="Tarakan">
+                        </a>
+                        <div class="loc-body">
+                            <h4>Tarakan</h4>
+                            <p>Ekosistem: Mangrove pesisir<br>Populasi: 180<br>Ancaman: Polusi, konversi lahan</p>
+                            <div class="chart-mini"><canvas id="donut1" width="78" height="78"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loc-slide">
+                    <div class="loc-card">
+                        <a class="loc-img-link" href="https://meratusgeopark.org/situs-konservasi-bekantan-curiak/"
+                            target="_blank">
+                            <img src="images/Curiak.jpg" alt="Curiak">
+                        </a>
+                        <div class="loc-body">
+                            <h4>Curiak</h4>
+                            <p>Ekosistem: Mangrove & rawa gambut<br>Populasi: 320<br>Ancaman: Illegal logging</p>
+                            <div class="chart-mini"><canvas id="donut2" width="78" height="78"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loc-slide">
+                    <div class="loc-card">
+                        <a class="loc-img-link" href="https://bksdakalsel.com/" target="_blank">
+                            <img src="images/Burito.jpg" alt="Barito">
+                        </a>
+                        <div class="loc-body">
+                            <h4>Barito</h4>
+                            <p>Ekosistem: Hutan rawa<br>Populasi: 420<br>Ancaman: Pencemaran, perambahan</p>
+                            <div class="chart-mini"><canvas id="donut3" width="78" height="78"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loc-slide">
+                    <div class="loc-card">
+                        <a class="loc-img-link" href="https://bksda.kaltimprov.go.id/" target="_blank">
+                            <img src="images/Samarida.jpg" alt="Samarinda">
+                        </a>
+                        <div class="loc-body">
+                            <h4>Samarinda</h4>
+                            <p>Ekosistem: Hutan sekunder & mangrove<br>Populasi: 230<br>Ancaman: Urbanisasi</p>
+                            <div class="chart-mini"><canvas id="donut4" width="78" height="78"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="loc-slider-btn loc-slider-prev" id="lokasiPrev" aria-label="Sebelumnya">‹</button>
+            <button class="loc-slider-btn loc-slider-next" id="lokasiNext" aria-label="Selanjutnya">›</button>
+        </div>
+    </section>
+
+    <!-- ========== SECTION ARTIKEL ( carousel ) ========== -->
+    <section id="artikel" class="section">
+        <h2 class="section-title">Artikel & Berita Konservasi</h2>
+        <div class="carousel" id="artikelCarousel" aria-label="Carousel Artikel">
+            <div class="carousel-track" id="carouselTrack"></div>
+            <div class="carousel-nav" aria-hidden="true">
+                <button class="carousel-button" id="prevBtn" title="Sebelumnya">‹</button>
+                <button class="carousel-button" id="nextBtn" title="Selanjutnya">›</button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION PROGRAM ========== -->
+    <section id="program" class="section">
+        <h2 class="section-title">Program & Kegiatan</h2>
+        <div class="prog-grid">
+            <div class="prog-card">
+                <a class="prog-img-link" href="https://portal-mangrove.com/penanaman" target="_blank">
+                    <img src="images/MenanamMAngrove.jpg" alt="Penanaman Mangrove">
+                </a>
+                <div class="prog-body">
+                    <h4>Penanaman Mangrove</h4>
+                    <p>Kolaborasi multipihak menanam ribuan bibit per tahun di delta Kalimantan.</p>
+                </div>
+            </div>
+            <div class="prog-card">
+                <a class="prog-img-link" href="https://portal-monitor.com" target="_blank">
+                    <img src="images/MonitorBekantan.jpg" alt="Spot Feeding Bekantan">
+                </a>
+                <div class="prog-body">
+                    <h4>Spot Feeding Bekantan</h4>
+                    <p>Spot Feeding sebagai daya tarik untuk pengunjung yang datang.</p>
+                </div>
+            </div>
+            <div class="prog-card">
+                <a class="prog-img-link" href="https://portal-mangrove.com/restorasi" target="_blank">
+                    <img src="images/Restorasi Bekantan.jpg" alt="Restorasi Habitat">
+                </a>
+                <div class="prog-body">
+                    <h4>Restorasi Habitat</h4>
+                    <p>Proyek pemulihan area rusak: revegetasi, pengendalian erosi, penguatan komunitas lokal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION EDUKASI ========== -->
+    <section id="edukasi" class="section">
+        <h2 class="section-title">Materi Edukasi & Publikasi</h2>
+        <div class="edukasi-grid">
+            <div class="edu-card">
+                <a class="edu-img-link"
+                    href="https://elti.yale.edu/sites/default/files/rsource_files/manual_pelatihan_mangrove_dan_bekantan.pdf"
+                    target="_blank">
+                    <img src="images/1.webp" alt="E-book Bekantan">
+                </a>
+                <div class="edu-body">
+                    <h4>E-book: Mengenal Bekantan</h4>
+                    <p>Panduan digital tentang ekologi, perilaku, dan konservasi bekantan untuk semua usia.</p>
+                </div>
+            </div>
+            <div class="edu-card">
+                <a class="edu-img-link" href="https://youtu.be/CCepZRWIcO8" target="_blank">
+                    <img src="images/Screenshot 2025-10-10 151131.png" alt="Video Edukasi">
+                </a>
+                <div class="edu-body">
+                    <h4>Video Edukasi</h4>
+                    <p>Film dokumenter dan tips pelestarian bekantan & mangrove.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TAHU GAK SIH? (BARU) -->
+    <!-- ======================================== -->
+    <section class="section" id="fakta-bekantan">
+        <h2 class="section-title">Tahu Gak Sih? 🐒</h2>
+        <div class="about">
+            <p>
+                Selama masa kawin, perilaku bekantan berubah menjadi lebih aktif dan menarik untuk diamati.
+                Jantan dewasa biasanya memperlihatkan dominasinya dengan suara panggilan yang lebih keras dan dalam.
+                Hidung panjang yang menjadi ciri khasnya berperan penting memperkuat suara sekaligus menunjukkan
+                kekuatan
+                kepada jantan lain.
+            </p>
+
+            <p>
+                Di antara dahan mangrove, persaingan antar jantan sering terlihat, namun jarang berujung perkelahian
+                serius.
+                Kebanyakan hanya berupa pamer suara, lompatan, atau gerakan tubuh untuk menunjukkan siapa yang paling
+                kuat.
+                Betina yang siap kawin memberikan sinyal halus.
+            </p>
+
+            <p>
+                Ketika betina menerima, jantan dominan biasanya akan tetap berada di dekatnya untuk mencegah pesaing —
+                perilaku ini disebut
+                <b>mate guarding</b>. Dinamika ini menunjukkan kompleksitas sosial bekantan dan pentingnya menjaga
+                habitatnya.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION KONTAK ========== -->
+    <section id="kontak" class="section">
+        <h2 class="section-title">Kontak & Jaringan</h2>
+        <div class="kontak-grid">
+            <div class="kontak-card">
+                <h4>Kantor Pusat</h4>
+                <p>Jl. 8J6F+8P3, Gg. Cemp. 5, Kp. Enam, Kec. Tarakan Tim., Kota Tarakan, Kalimantan Utara<br>
+                    Email: info@bekantan.org<br>
+                    WhatsApp: +62 851-8396-6003
+                </p>
+            </div>
+            <div class="kontak-card">
+                <h4>Media Sosial</h4>
+                <p>Instagram: @ays_indonesia<br>
+                    YouTube: @AYSINDONESIA<br>
+                    Facebook: @ays_indonesia
+                </p>
+            </div>
+            <div class="kontak-card">
+                <h4>Mitra Kolaborasi</h4>
+                <div class="footer-mitra">
+                    <img src="images/logo-wwf-indonesia-foto-wwf-77-removebg-preview.png" alt="WWF">
+                    <img src="images/kehutananv2.png" alt="KLHK">
+                    <img src="images/Logo_Universitas_Borneo_Tarakan.png" alt="UBT">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-block">
+                <h4>Transparansi</h4>
+                <p>Data update: Okt 2025<br>40% habitat, 25% riset, 20% edukasi, 15% operasional.</p>
+            </div>
+            <div class="footer-block">
+                <h4>Media & Mitra</h4>
+                <div class="footer-mitra">
+                    <img src="images/logo-wwf-indonesia-foto-wwf-77-removebg-preview.png" alt="WWF">
+                    <img src="images/kehutananv2.png" alt="KLHK">
+                    <img src="images/Logo_Universitas_Borneo_Tarakan.png" alt="UBT">
+                </div>
+            </div>
+        </div>
+        <small>&copy; 2025 Bekantan Conservation. All Rights Reserved.</small>
+    </footer>
+
+    <script>
+        // ===== BURGER MENU =====
+        const burgerMenu = document.getElementById('burgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            burgerMenu.classList.toggle('active');
+        });
+
+        // Tutup menu saat klik link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerMenu.classList.remove('active');
+            });
+        });
+
+        // Tutup menu saat klik di luar
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navMenu.classList.remove('active');
+                burgerMenu.classList.remove('active');
+            }
+        });
+
+        // ✅ EDIT DI SINI: TAMBAH/UBAH SLIDE DI ARRAY INI — OTOMATIS MAU MUNCUL!
+        const artikelSlides = [
+            {
+                title: "Monitoring Populasi 2025",
+                desc: "Laporan dari Pulau Curiak: pertumbuhan populasi bekantan & aktivitas habitat alami.",
+                img: "images/PenjagaBaik.jpg",
+                link: "https://mongabay.co.id/2025/03/27/mengenal-para-penjaga-bekantan-dari-pulau-curiak/"
+            },
+            {
+                title: "Rehabilitasi Mangrove Berhasil",
+                desc: "10.000 bibit mangrove berhasil ditanam di Tarakan.",
+                img: "images/ArtikelTarakan.jpg",
+                link: "https://kmisfip2.kehutanan.go.id/news/detail/1489"
+            },
+            {
+                title: "Edukasi Lingkungan",
+                desc: "Program sekolah berkelanjutan: 50 sekolah terlibat kampanye cinta bekantan.",
+                img: "images/FotoSekolah.jpeg",
+                link: "https://www.kompasiana.com/..."
+            },
+            {
+                title: "Mengatasi Konflik Habitat",
+                desc: "Inovasi dan kolaborasi warga dalam solusi konflik antara manusia & bekantan.",
+                img: "images/BekantanKalsel.jpeg",
+                link: "https://betahita.id/..."
+            },
+            {
+                title: "KKMB Tarakan",
+                desc: "KKMB Tarakan Menjaga Populasi Bekantan.",
+                img: "images/RRI.jpeg",
+                link: "https://rri.co.id/..."
+            },
+            {
+                title: "Keunikan Kawasan Konservasi",
+                desc: "Keunikan kawasan konservasi mangrove dan bekantan di kota Tarakan.",
+                img: "images/Keunikan Bekantan.jpg",
+                link: "https://www.liputan6.com/..."
+            },
+            {
+                title: "Status KKMB Mengambang",
+                desc: "Dualisme Pengelolaan, Status KKMB Kota Tarakan Masih Mengambang.",
+                img: "images/Dualisme KKMB.jpg",
+                link: "https://benuanta.co.id/..."
+            },
+            {
+                title: "Rehabilitasi Mangrove Kalsel",
+                desc: "Pemprov Kalsel rehabilitasi hampir 8.000 hektare mangrove.",
+                img: "images/Berita Kalsel.jpeg",
+                link: "https://diskominfomc.kalselprov.go.id/..."
+            },
+            {
+                title: "Spot Feeding Bekantan",
+                desc: "Spot feeding sebagai daya tarik edukasi dan konservasi.",
+                img: "images/MonitorBekantan.jpg",
+                link: "https://portal-monitor.com"
+            },
+            {
+                title: "Restorasi Habitat",
+                desc: "Proyek pemulihan area rusak: revegetasi, pengendalian erosi.",
+                img: "images/MenanamMAngrove.jpg",
+                link: "https://portal-mangrove.com/restorasi"
+            }
+        ];
+
+        // GENERATE SLIDE HTML dari array
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('carouselTrack');
+            const indicatorsWrap = document.getElementById('carouselIndicators');
+
+            // Kosongkan dulu (jika ada)
+            track.innerHTML = '';
+            indicatorsWrap.innerHTML = '';
+
+            // Buat slide & indikator
+            artikelSlides.forEach((slide, idx) => {
+                // Slide
+                const slideEl = document.createElement('div');
+                slideEl.className = 'carousel-slide';
+                slideEl.innerHTML = `
+          <a class="img-link" href="${slide.link}" target="_blank">
+            <img src="${slide.img}" alt="${slide.title}">
+          </a>
+          <div class="carousel-info">
+            <h4>${slide.title}</h4>
+            <p>${slide.desc}</p>
+          </div>
+        `;
+                track.appendChild(slideEl);
+
+                // Indikator
+                const btn = document.createElement('button');
+                btn.setAttribute('aria-label', `Slide ${idx + 1}`);
+                if (idx === 0) btn.classList.add('active');
+                btn.addEventListener('click', () => goToSlide(idx));
+                indicatorsWrap.appendChild(btn);
+            });
+
+            // Setup carousel logic
+            const slides = Array.from(track.children);
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const indicators = Array.from(indicatorsWrap.children);
+            let current = 0;
+            let interval = null;
+            const autoplayDelay = 5000;
+
+            function update() {
+                const width = document.querySelector('.carousel').clientWidth;
+                track.style.transform = `translateX(-${current * width}px)`;
+                indicators.forEach((b, i) => b.classList.toggle('active', i === current));
+            }
+
+            function goToSlide(idx) {
+                current = (idx + slides.length) % slides.length;
+                update();
+                resetAutoplay();
+            }
+
+            function nextSlide() { goToSlide(current + 1); }
+            function prevSlide() { goToSlide(current - 1); }
+
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            // Autoplay
+            function startAutoplay() { interval = setInterval(nextSlide, autoplayDelay); }
+            function stopAutoplay() { clearInterval(interval); interval = null; }
+            function resetAutoplay() { stopAutoplay(); startAutoplay(); }
+
+            document.getElementById('artikelCarousel').addEventListener('mouseenter', stopAutoplay);
+            document.getElementById('artikelCarousel').addEventListener('mouseleave', startAutoplay);
+            document.getElementById('artikelCarousel').addEventListener('focusin', stopAutoplay);
+            document.getElementById('artikelCarousel').addEventListener('focusout', startAutoplay);
+            window.addEventListener('resize', update);
+
+            // Keyboard arrows
+            document.getElementById('artikelCarousel').addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
+
+            // Init
+            setTimeout(() => { update(); startAutoplay(); }, 100);
+        });
+
+        // CHARTS DONUT JS
+        (function () {
+            // Chart utama
+            const populasi = [180, 320, 420, 230]; // Tarakan, Curiak, Barito, Samarinda
+            const ctx = document.getElementById('populasiChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Tarakan', 'Curiak', 'Barito', 'Samarinda'],
+                    datasets: [{
+                        data: populasi,
+                        backgroundColor: ['#4a7c59', '#ffa500', '#7fc4fd', '#ff8c00'],
+                        borderWidth: 3,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    },
+                    cutout: '65%',
+                    animation: {
+                        duration: 1400,
+                        easing: 'easeOutBounce'
+                    }
+                }
+            });
+
+            const total = populasi.reduce((a, b) => a + b, 0);
+            [['donut1', 0], ['donut2', 1], ['donut3', 2], ['donut4', 3]].forEach(([id, ix]) => {
+                new Chart(document.getElementById(id).getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Populasi', 'Sisa'],
+                        datasets: [{
+                            data: [populasi[ix], total - populasi[ix]],
+                            backgroundColor: ['#ffa500', '#e4e4e4'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        cutout: '72%',
+                        animation: {
+                            duration: 1100,
+                            delay: ix * 200
+                        }
+                    }
+                });
+            });
+        })();
+
+        // LOKASI SLIDER FUNCTIONALITY
+        (function () {
+            const slider = document.getElementById('lokasiSlider');
+            const prevBtn = document.getElementById('lokasiPrev');
+            const nextBtn = document.getElementById('lokasiNext');
+
+            if (!slider || !prevBtn || !nextBtn) return;
+
+            const slideWidth = slider.querySelector('.loc-slide').offsetWidth;
+            const gap = 20;
+
+            function scroll(direction) {
+                const scrollAmount = slideWidth + gap;
+                slider.scrollBy({
+                    left: direction === 'next' ? scrollAmount : -scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+
+            prevBtn.addEventListener('click', () => scroll('prev'));
+            nextBtn.addEventListener('click', () => scroll('next'));
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                // Optional: recalculate slide width if needed
+            });
+        })();
+    </script>
+</body>
+
+</html>
